@@ -34,18 +34,15 @@ if __name__ == "__main__":
     dictCondition = {0: 'full', 1: 'hungry'}
     dictAction = {0: 'eat', 1: 'sleep', 2: 'run', 3: 'watch', -1: 'do nothing'}
 
+    print("Enter condition of your lion 'hungry' or 'full'('exit' to exit programm)")
+    condition = input()
+    if (condition == 'full'):
+        conditionIndex=0
+    elif(condition == 'hungry'):
+        conditionIndex=1
+    myLion = Lion(table,conditionIndex)
+
     while condition != "exit" and whoMeetLion != "exit":
-        print("Enter condition of your lion 'hungry' or 'full'")
-        condition = input()
-        if (condition == 'full'):
-            conditionIndex=0
-            myLion = Lion(table,conditionIndex)
-        elif(condition == 'hungry'):
-            conditionIndex=1
-            myLion = Lion(table,conditionIndex)
-        else:
-            print("Enter only 'hungry' or 'full'!")
-            continue
         print("Enter 'antelope','hunter' or 'tree'('exit' to exit programm)")
         whoMeetLion = input()
         if(whoMeetLion == "exit" or (whoMeetLion != "antelope" and whoMeetLion != "hunter" and whoMeetLion != "tree")):
