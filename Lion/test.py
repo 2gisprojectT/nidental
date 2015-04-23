@@ -2,6 +2,7 @@ from unittest import TestCase
 from Example import Lion
 import unittest
 
+
 class lionTest(TestCase):
 
     def testInitLion(self):

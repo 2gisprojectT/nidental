@@ -1,6 +1,7 @@
 # coding utf-8
 class Lion:
 
+
     def __init__(self,table, condition):
         self.condition_ = condition
         if(table=={}):
