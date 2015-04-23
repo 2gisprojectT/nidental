@@ -3,13 +3,14 @@ import unittest
 from selenium import webdriver
 
 
+
 class SeleniumTest(TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
         self.driver.get("https://google.ru")
 
-        # self.driver = webdriver.Remote("http://localhost:9515",webdriver.DesiredCapabilities.CHROME)
-        # self.driver.get("https://google.ru")
+        self.driver = webdriver.Remote("http://localhost:9515",webdriver.DesiredCapabilities.CHROME)
+        self.driver.get("https://google.ru")
 
 
 
