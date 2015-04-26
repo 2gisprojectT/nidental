@@ -1,5 +1,5 @@
 from unittest import TestCase
-from Example import Lion
+from lion import Lion
 import unittest
 
 class lionTest(TestCase):
