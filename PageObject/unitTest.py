@@ -10,12 +10,15 @@ class SeleniumWithPage(TestCase):
         self.page.open("https://github.com/login")
 
     def testCorrectLogin(self):
-        self.page.setLogin("loginkuxDRjzq2015").setPassword("loginmbgDRxhf2015").input()
-        self.assertEqual("@loginkuxDRjzq2015",self.page.getUserName())
-
+        # self.page.setLogin("loginkuxDRjzq2015").setPassword("loginmbgDRxhf2015").input()
+        self.page.login_form.login("loginkuxDRjzq2015", "loginmbgDRxhf2015")
+        # self.assertEqual("@loginkuxDRjzq2015",self.page.getUserName())
+        self.assertEqual("@loginkuxDRjzq2015",self.page.login_form.getUserName())
     def testIncorrectLogin(self):
-        self.page.setLogin("12345").setPassword("12345").input()
-        self.assertEqual("https://github.com/session",self.page.getCurrentUrl())
+        # self.page.setLogin("12345").setPassword("12345").input()
+        self.page.login_form.login("12345", "12345")
+        # self.assertEqual("https://github.com/session",self.page.getCurrentUrl())
+        self.assertEqual("https://github.com/session",self.page.login_form.getCurrentUrl())
 
     def tearDown(self):
         self.driver.close()
